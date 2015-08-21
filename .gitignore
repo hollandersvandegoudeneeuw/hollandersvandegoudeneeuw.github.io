@@ -1,0 +1,9 @@
+public
+node_modules/*
+npm-debug.log
+docs
+vendor
+bower_components
+
+test/test-results.xml
+test-results.xml
