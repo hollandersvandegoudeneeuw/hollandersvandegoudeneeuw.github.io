@@ -1,5 +1,5 @@
 angular.module('app.controllers')
 
-  .controller('ProfileCtrl', function TimelineCtrl($scope, $modal, AuthState) {
+  .controller('ProfileCtrl', function ProfileCtrl($scope, $modal, AuthState) {
   })
 ;

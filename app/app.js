@@ -51,13 +51,13 @@ angular.module('app',
 
       .state('story.timeline', {
         url: "/timeline", // root route
-        templateUrl: "partials/timeline.html",
+        templateUrl: "partials/cardlist.html",
         controller: 'TimelineCtrl'
       })
 
       .state('story.favorites', {
         url: "/favorites",
-        templateUrl: "partials/favorites.html",
+        templateUrl: "partials/cardlist.html",
         controller: 'FavoritesCtrl'
       })
 
