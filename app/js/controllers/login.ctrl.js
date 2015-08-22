@@ -1,6 +1,6 @@
 angular.module('app.controllers')
 
-  .controller('LoginCtrl', function StartCtrl($scope, $modal, AuthService, AuthState) {
+  .controller('LoginCtrl', function StartCtrl($scope, $state, AuthService, AuthState) {
 
     $scope.errorMessage = null;
 
@@ -9,9 +9,7 @@ angular.module('app.controllers')
 
       AuthService.login($scope.email).then(
         function(r) {
-          console.log('jajaja');
-
-          console.log('profile', AuthState.profile);
+          $state.go('start');
         },
         function(e) {
           console.log(e);

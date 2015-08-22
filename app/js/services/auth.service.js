@@ -4,13 +4,17 @@ angular.module('app.services')
         return localStorage.email;
       },
       setEmail: function(e) {
-        localStorage.email = e;
+        if (!e) {
+          delete localStorage.email;
+        } else {
+          localStorage.email = e;
+        }
       }, 
       profile: null,
       stories: null
   })
 
-  .factory('AuthService', function AuthService($q, AuthState, APIService) {
+  .factory('AuthService', function AuthService($q, $state, $http, AuthState, APIService) {
 
     function authSuccess(r) {
       AuthState.profile = r;
@@ -32,10 +36,16 @@ angular.module('app.services')
           return authSuccess(r);
         });
     }
+    function logout() {
+      AuthState.setEmail(null);
+      $http.defaults.cache.removeAll();
+      $state.go('start');
+    }
 
 	return {
       isAuthorized: isAuthorized,
-      login: login
+      login: login,
+      logout: logout
     };
   })
 ;

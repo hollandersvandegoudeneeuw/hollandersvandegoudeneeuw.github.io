@@ -24,6 +24,10 @@ angular.module('app',
       }
   )
 
+  .run(function($cacheFactory, $http) {
+    $http.defaults.cache = $cacheFactory('default');
+  })
+
   .config(function($stateProvider, $urlRouterProvider) {
 
     var resolveStory = {story: ['APIService', 'AuthService', '$stateParams', function(APIService, AuthService, $stateParams) {
@@ -37,6 +41,12 @@ angular.module('app',
       .state('start', {
         url: "/",
         controller: 'StartCtrl',
+      })
+
+      .state('login', {
+        url: "/login",
+        templateUrl: "partials/login.html",
+        controller: 'LoginCtrl',
       })
 
       .state('story', {
@@ -65,12 +75,6 @@ angular.module('app',
         url: "/profile",
         templateUrl: "partials/profile.html",
         controller: 'ProfileCtrl',
-      })
-
-      .state('login', {
-        url: "/login",
-        templateUrl: "partials/login.html",
-        controller: 'LoginCtrl',
       })
 
     ;
