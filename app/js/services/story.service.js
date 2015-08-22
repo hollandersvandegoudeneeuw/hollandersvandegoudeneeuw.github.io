@@ -17,7 +17,7 @@ angular.module('app.services')
       };
 
       self.filterCards = function(ids) {
-        return _.reduce(
+        var list = _.reduce(
           ids,
           function(list, id) {
             // find id in story
@@ -27,6 +27,8 @@ angular.module('app.services')
             }
             return list;
           }, []);
+        list.reverse();
+        return list;
       };
 
       return self;
