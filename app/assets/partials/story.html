@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="s in state.stories" ng-class="{active: s.id == story.id}">
+                <a href ui-sref="story.timeline({storyId: s.id})">
+                    {{ s.title }}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+
+        <ul class="nav nav-tabs">
+            <li ng-class="{active: $state.current.name == 'story.timeline'}"><a href ui-sref="story.timeline({storyId: story.id})">Timeline</a></li>
+            <li ng-class="{active: $state.current.name == 'story.favorites'}"><a href ui-sref="story.favorites({storyId: story.id})">Favorites</a></li>
+            <li ng-class="{active: $state.current.name == 'story.profile'}"><a  href ui-sref="story.profile({storyId: story.id})">Profile</a></li>
+        </ul>
+
+        <ui-view></ui-view>
+    </div>
+</div>

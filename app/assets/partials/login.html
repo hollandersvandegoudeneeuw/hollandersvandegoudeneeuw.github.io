@@ -1,0 +1,18 @@
+<div>
+    <h3>Please log in</h3>
+    <form name="loginForm" novalidate ng-submit="login()">
+
+        <div class="alert alert-warning" ng-show="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="form-control" ng-model="email" required placeholder="E-mail address" ng-change="errorMessage=''"/>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Start</button>
+        </div>
+    </form>
+
+</div>
