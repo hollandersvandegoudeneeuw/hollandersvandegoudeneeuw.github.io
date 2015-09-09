@@ -1,16 +1,17 @@
 angular.module('app.controllers', []);
 angular.module('app.services', []);
-angular.module('app.ui', []);
+angular.module('app.directives', []);
 
 angular.module('app', 
                ['ngSanitize', 
                 'ngResource', 
                 'ngAnimate', 
+                'templates',
                 'ui.router', 
                 'ui.bootstrap', 
                 'app.controllers',
-                'app.services',
-                'app.ui'
+                'app.directives',
+                'app.services'
                ])
 
   .constant(
@@ -26,6 +27,10 @@ angular.module('app',
 
   .run(function($cacheFactory, $http) {
     $http.defaults.cache = $cacheFactory('default');
+  })
+
+  .value('Constants', {
+    YOU: 351
   })
 
   .config(function($stateProvider, $urlRouterProvider) {
@@ -45,13 +50,13 @@ angular.module('app',
 
       .state('login', {
         url: "/login",
-        templateUrl: "partials/login.html",
+        templateUrl: "app/templates/login.html",
         controller: 'LoginCtrl',
       })
 
       .state('story', {
         url: "/:storyId", // root route
-        templateUrl: "partials/story.html",
+        templateUrl: "app/templates/story.html",
         resolve: resolveStory,
         controller: function($scope, story, $state) {
           $scope.story = story;
@@ -61,20 +66,38 @@ angular.module('app',
 
       .state('story.timeline', {
         url: "/timeline", // root route
-        templateUrl: "partials/cardlist.html",
+        templateUrl: "app/templates/cardlist.html",
         controller: 'TimelineCtrl'
       })
 
       .state('story.favorites', {
         url: "/favorites",
-        templateUrl: "partials/cardlist.html",
+        templateUrl: "app/templates/cardlist.html",
         controller: 'FavoritesCtrl'
       })
 
       .state('story.profile', {
         url: "/profile",
-        templateUrl: "partials/profile.html",
+        templateUrl: "app/templates/profile.html",
         controller: 'ProfileCtrl',
+      })
+
+      .state('story.person', {
+        url: "/person/:personId",
+        templateUrl: "app/templates/person.html",
+        controller: 'PersonCtrl',
+      })
+
+      .state('story.group', {
+        url: "/group/:groupId",
+        templateUrl: "app/templates/group.html",
+        controller: 'GroupCtrl',
+      })
+
+      .state('story.hashtag', {
+        url: "/hashtag/:hashtagId",
+        templateUrl: "app/templates/hashtag.html",
+        controller: 'HashtagCtrl',
       })
 
     ;

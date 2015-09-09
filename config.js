@@ -13,6 +13,11 @@ exports.config = {
   },
 
   files: {
+    templates: {
+      joinTo: {
+        'js/templates.js': /^app\/templates/
+      }
+    },
     javascripts: {
       joinTo: {
         'js/app.js': /^app/,

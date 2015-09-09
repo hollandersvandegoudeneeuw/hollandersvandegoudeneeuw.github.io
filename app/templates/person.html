@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <img ng-src="{{ person.image }}" />
+    </div>
+    
+    <h2>{{ person.title }}</h2>
+
+    <h3>
+        {{ person.subtitle }}
+    </h3>
+
+    <div>
+        {{ person.summary }}
+    </div>
+
+    <div>
+        <div ng-repeat="row in person.keyvalue">
+            <strong>
+                {{ row.key }}
+            </strong>
+            {{ row.value }}
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,20 @@
+<div ng-repeat="card in cards">
+
+    <card-image card="card" story="story" profile="profile" who="author"></card-image>
+    <card-image card="card" story="story" profile="profile" who="target"></card-image>
+
+    <div>
+        <div>{{ card.card_date }}</div>
+        <card-title card="card" story="story" profile="profile"></card-title>
+
+        <div>
+            {{ card.summary }}
+        </div>
+        
+        <div>
+            <a ng-repeat="h in card.hashtags" href ui-sref="story.hashtag({storyId: story.id, hashtagId: h.id})">
+                {{ h.title }}
+            </span>
+        </div>
+    </div>
+</div>

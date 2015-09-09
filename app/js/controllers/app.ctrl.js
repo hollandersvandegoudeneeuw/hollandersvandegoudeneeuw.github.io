@@ -1,7 +1,8 @@
 angular.module('app.controllers')
 
-  .controller('AppCtrl', function StartCtrl($scope, $modal, AuthState) {
+  .controller('AppCtrl', function StartCtrl($scope, $modal, $rootScope, AuthState) {
     $scope.state = AuthState;
+    $rootScope.lang = navigator.language.substr(0,2) == 'nl' ? 'nl' : 'en';
   })
 
   .controller('StartCtrl', function StartCtrl($scope, $state, AuthService, AuthState) {
