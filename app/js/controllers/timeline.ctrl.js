@@ -5,11 +5,21 @@ angular.module('app.controllers')
     $scope.cards = container.filterCards(AuthState.profile.read);
   })
 
-  .controller('CardListCtrl', function CardListCtrl($scope, i18n, AuthState) {
+  .controller('CardListCtrl', function CardListCtrl($scope, i18n, AuthState, APIService) {
 
     function likes(card) {
       return _.contains(AuthState.profile.likes, card.id);
     }
+
+    $scope.toggleLike = function(card) {
+      var deleteLike = likes(card);
+      APIService.post('goldenage/favorite', {card_id: card.id, delete: deleteLike});
+      if (deleteLike) {
+        AuthState.profile.likes = _.difference(AuthState.profile.likes, [card.id]);
+      } else {
+        AuthState.profile.likes.push(card.id);
+      }
+    };
     
     $scope.likeImage = function(card) {
       return likes(card) ? '/img/ic_card_heart_on.png' : '/img/ic_card_heart_off.png';

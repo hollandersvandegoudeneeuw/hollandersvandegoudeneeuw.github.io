@@ -18,6 +18,11 @@ angular.module('app.services')
         }).then(function(r) {
           return r.data;
         });
+      },
+      post: function(path, args) {
+        return $http.post(APIConfig.backend + path, args).then(function(r) {
+          return r.data;
+        });
       }
     };
   })

@@ -22,7 +22,7 @@
             
             <div class="likes">
                 <span ng-bind="likeText(card, story)"></span>
-                <img class="like-button" ng-src="{{ likeImage(card) }}" />
+                <img class="like-button" ng-src="{{ likeImage(card) }}" ng-click="toggleLike(card)" />
                 <div class="clearfix"></div>
             </div>
         </div>
