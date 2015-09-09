@@ -1,17 +1,17 @@
-<div>
-    <h3>Please log in</h3>
+<div class="login">
+    <h1>{{ 'login_title'|i18n }}</h1>
+
+    <p>{{ 'login_text'|i18n }}</p>
+    
     <form name="loginForm" novalidate ng-submit="login()">
 
         <div class="alert alert-warning" ng-show="errorMessage">
             {{ errorMessage }}
         </div>
 
-        <div class="form-group">
-            <input type="email" class="form-control" ng-model="email" required placeholder="E-mail address" ng-change="errorMessage=''" autofocus />
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-primary">Start</button>
+        <div>
+            <input type="email" class="form-control" ng-model="email" required placeholder="{{ 'login_placeholder'|i18n }}" ng-change="errorMessage=''" autofocus />
+            <button class="btn btn-primary">{{ 'login_btn'|i18n }}</button>
         </div>
     </form>
 

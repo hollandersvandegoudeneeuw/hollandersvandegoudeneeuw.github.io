@@ -1,0 +1,41 @@
+.ui-view-master > .login {
+
+    color: $greylight;
+
+    max-width: 400px;
+    margin: $pad3 auto;
+
+    font-size: $fontm;
+    
+    h1 {
+        text-align: center;
+        margin: 0 0 $pad2 0;
+        font-size: $fontxl;
+        font-weight: 300;
+    }
+
+    p {
+        margin: 0 0 $pad2 0;
+    }
+
+    input {
+        font-size: $fontl;
+        padding: $pad*2;
+        border: 0;
+        border-radius: 0;
+        background: $greylight;
+    }
+    button {
+        font-weight: 300;
+        font-size: $fontl;
+        text-transform: uppercase;
+        background: $greydark;
+        text-color: white;
+        border-radius: 0;
+        border: 0;
+        display: block;
+        width: 100%;
+        padding: $pad;
+    }
+    
+}

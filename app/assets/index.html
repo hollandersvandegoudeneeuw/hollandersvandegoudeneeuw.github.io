@@ -6,16 +6,18 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+        
         <link rel="stylesheet" href="css/app.css" />
 	    <base href="/" />
     </head>
-    <body ng-controller="AppCtrl">
-
+    <body ng-controller="AppCtrl" ng-class="{blurred: blurred}">
+        <div class="background-image"></div>
+        
         <div class="wrapper">
             <div class="container main-content">
-                <div class="ui-view-container">
-                    <ui-view></ui-view>
-                </div>
+                <div class="ui-view-master" ui-view="master"></div>
             </div>
             <div class="push"></div>
         </div>

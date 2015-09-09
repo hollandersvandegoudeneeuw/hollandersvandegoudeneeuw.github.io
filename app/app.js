@@ -5,7 +5,7 @@ angular.module('app.directives', []);
 angular.module('app', 
                ['ngSanitize', 
                 'ngResource', 
-                'ngAnimate', 
+                'ngAnimate',
                 'templates',
                 'ui.router', 
                 'ui.bootstrap', 
@@ -44,62 +44,104 @@ angular.module('app',
     $stateProvider
 
       .state('start', {
-        url: "/",
-        controller: 'StartCtrl',
+        url: "/start",
+        views: {
+          master: {
+            controller: 'StartCtrl'
+          }
+        }
       })
 
       .state('login', {
         url: "/login",
-        templateUrl: "app/templates/login.html",
-        controller: 'LoginCtrl',
+        views: {
+          "master": {
+            templateUrl: "app/templates/login.html",
+            controller: 'LoginCtrl'
+          }
+        }
       })
 
       .state('story', {
         url: "/:storyId", // root route
-        templateUrl: "app/templates/story.html",
         resolve: resolveStory,
-        controller: function($scope, story, $state) {
-          $scope.story = story;
-          $scope.$state = $state;
+        views: {
+          "master": {
+            templateUrl: "app/templates/story.html",
+            controller: function($scope, story, $state) {
+              $scope.story = story;
+              $scope.$state = $state;
+            }
+          }
         }
+      })
+
+      .state('story.choose', {
+        url: "/choose", // root route
+        templateUrl: "app/templates/choosestories.html",
+        controller: 'ChooseStoriesCtrl'
       })
 
       .state('story.timeline', {
         url: "/timeline", // root route
-        templateUrl: "app/templates/timeline.html",
-        controller: 'TimelineCtrl'
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/timeline.html",
+            controller: 'TimelineCtrl'
+          }
+        }
       })
 
       .state('story.favorites', {
         url: "/favorites",
-        templateUrl: "app/templates/favorites.html",
-        controller: 'FavoritesCtrl'
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/favorites.html",
+            controller: 'FavoritesCtrl'
+          }
+        }
       })
 
       .state('story.profile', {
         url: "/profile",
-        templateUrl: "app/templates/profile.html",
-        controller: 'ProfileCtrl',
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/profile.html",
+            controller: 'ProfileCtrl',
+          }
+        }
       })
 
       .state('story.person', {
         url: "/person/:personId",
-        templateUrl: "app/templates/person.html",
-        controller: 'PersonCtrl',
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/person.html",
+            controller: 'PersonCtrl',
+          }
+        }
       })
 
       .state('story.group', {
         url: "/group/:groupId",
-        templateUrl: "app/templates/group.html",
-        controller: 'GroupCtrl',
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/group.html",
+            controller: 'GroupCtrl',
+          }
+        }
       })
 
       .state('story.hashtag', {
         url: "/hashtag/:hashtagId",
-        templateUrl: "app/templates/hashtag.html",
-        controller: 'HashtagCtrl',
+        views: {
+          "detail@story": {
+            templateUrl: "app/templates/hashtag.html",
+            controller: 'HashtagCtrl',
+          }
+        }
       })
-
     ;
-    $urlRouterProvider.otherwise("/");
+    
+    $urlRouterProvider.otherwise("/start");
   });

@@ -1,0 +1,73 @@
+.ui-view-master > .story {
+
+    @media(min-width: 768px) {
+        margin-top: $pad2;
+    }
+    
+    $nav-bar-height: 60px;
+    
+    background: $greydark;
+    color: $greylight;
+    
+    div.profile-side > div {
+        background: $greydeep;
+        height: $nav-bar-height;
+        font-size: $fontl;
+        padding: $pad;
+        font-weight: 400;
+    }
+
+    div.navigation-tabs > div {
+        height: $nav-bar-height;
+        margin: 0;
+        
+        display: flex;
+        flex-flow: row wrap;
+        > a {
+            flex: 1;
+            background-repeat: no-repeat;
+            background-size: $nav-bar-height - 2*$pad;
+            background-position: 50% 45%;
+            
+            &.stories {
+                background-image: url(/img/ic_home_off.png);
+                &.active { background-image: url(/img/ic_home_on.png); }
+            }
+            &.timeline {
+                background-image: url(/img/ic_timeline_off.png);
+                &.active { background-image: url(/img/ic_timeline_on.png); }
+            }
+            &.favorites {
+                background-image: url(/img/ic_heart_off.png);
+                &.active { background-image: url(/img/ic_heart_on.png); }
+            }
+            &.profile {
+                background-image: url(/img/ic_profile_off.png);
+                &.active { background-image: url(/img/ic_profile_on.png); }
+            }
+
+            border-bottom: 4px solid $greydeep;
+            &.active { border-color: $gold; }
+        }
+    }
+    
+}
+
+::-webkit-scrollbar
+{
+  width: 20px;  /* for vertical scrollbars */
+  height: 20px; /* for horizontal scrollbars */
+  
+}
+
+::-webkit-scrollbar-track
+{
+    background: $greydark;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: $greydeep;
+    border-radius: 14px;
+    border: 7px solid $greydark;
+}

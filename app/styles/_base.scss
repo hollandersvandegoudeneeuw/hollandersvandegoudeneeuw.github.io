@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+}
+
+@mixin circleimg {
+    border-radius: 50%;
+    border: 3px solid #666;
+}
+
+img.profile-image, img.person-image {
+    @include circleimg;
+    width: 90px; height: 90px;
+}
+
+img.card-profile-image {
+    @include circleimg;
+    width: 60px; height: 60px;
+}
+
+#scroll-area {
+    height: 90vh;
+    overflow: auto;
+}
+
+
+$greylight: #E6E6E6;
+$greymedium: #D4D4D4;
+$greydeep: #4D5257;
+$greydark: #2A2F34;
+$gold: #C09933;
+
+$pad: 15px;
+$pad2: 35px;
+$pad3: 80px;
+
+$fontxl: 50px;
+$fontl: 19px;
+$fontm: 17px;
+$fonts: 14px;
+
+body {
+    background: $greydeep;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    
+    .background-image {
+        opacity: 0.5;
+        position: absolute;
+        top: -20px; left: -20px; bottom: -20px; right: -20px;
+        background: url(/img/background.jpg);
+        background-size: cover;
+
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+    }
+
+    > .wrapper {
+        position: relative;
+    }
+}

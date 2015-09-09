@@ -1,5 +1,15 @@
 angular.module('app.directives')
 
+  .directive('scrollPane', function() {
+    return {
+      restrict: 'E',
+      link: function(s, elem) {
+        console.log('aaa');
+
+      }
+    };
+  })
+
   .directive('subnavHeader', function($window) {
     return {
       restrict: 'E',
