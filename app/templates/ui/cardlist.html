@@ -1,20 +1,24 @@
-<div ng-repeat="card in cards">
+<div ng-repeat="card in cards" class="cardlist">
+    <div class="timeline-card">
 
-    <card-image card="card" story="story" profile="state.profile" who="author"></card-image>
-    <card-image card="card" story="story" profile="state.profile" who="target"></card-image>
-
-    <div>
-        <div>{{ card.card_date }}</div>
-        <card-title card="card" story="story" profile="state.profile"></card-title>
-
-        <div>
-            {{ card.summary }}
+        <div class="left">
+            <card-image card="card" story="story" profile="state.profile" who="author"></card-image>
+            <card-image card="card" story="story" profile="state.profile" who="target"></card-image>
         </div>
-        
-        <div>
-            <a ng-repeat="h in card.hashtags" href ui-sref="story.hashtag({storyId: story.id, hashtagId: h.id})">
-                {{ h.title }}
-            </span>
+
+        <div class="card">
+            <div>{{ card.card_date }}</div>
+            <card-title card="card" story="story" profile="state.profile"></card-title>
+
+            <div>
+                {{ card.summary }}
+            </div>
+            
+            <div>
+                <a ng-repeat="h in card.hashtags" href ui-sref="story.hashtag({storyId: story.id, hashtagId: h.id})">
+                    {{ h.title }}
+                </a>
+            </div>
         </div>
     </div>
 </div>

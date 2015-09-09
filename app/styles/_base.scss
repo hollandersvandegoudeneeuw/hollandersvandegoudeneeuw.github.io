@@ -12,11 +12,6 @@ img.profile-image, img.person-image {
     width: 90px; height: 90px;
 }
 
-img.card-profile-image {
-    @include circleimg;
-    width: 60px; height: 60px;
-}
-
 
 $greylight: #E6E6E6;
 $greymedium: #D4D4D4;
@@ -61,11 +56,6 @@ body {
 
 
 
-
-div.scroll-area {
-    height: 100vh;
-    overflow: auto;
-}
 
 ::-webkit-scrollbar
 {

@@ -1,0 +1,35 @@
+$card-profile-image: 60px;
+$card-left-column: $card-profile-image + 2 * $pad * 1.5;
+
+div.scroll-area {
+    height: 100vh;
+    overflow: auto;
+    background: url(/img/timeline_bg_dot.png) repeat-y top left;
+    background-position-x: $card-left-column / 2 - 2px;
+    background-size: 4px;
+}
+
+div.timeline-card {
+    display: flex;
+    flex-flow: row wrap;
+
+    > div.left {
+        width: $card-left-column;
+        padding: $pad * 1.5;
+        img.card-profile-image {
+            display: block;
+            @include circleimg;
+            width: $card-profile-image; height: $card-profile-image;
+        }
+        
+    }
+    
+    > div.card {
+        flex: 1;
+        background: $greylight;
+        color: $greydark;
+        margin: $pad;
+        margin-left: 0;
+        padding: $pad;
+    }
+}
