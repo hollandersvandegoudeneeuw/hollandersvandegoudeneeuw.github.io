@@ -1,11 +1,11 @@
 <div ng-repeat="card in cards">
 
-    <card-image card="card" story="story" profile="profile" who="author"></card-image>
-    <card-image card="card" story="story" profile="profile" who="target"></card-image>
+    <card-image card="card" story="story" profile="state.profile" who="author"></card-image>
+    <card-image card="card" story="story" profile="state.profile" who="target"></card-image>
 
     <div>
         <div>{{ card.card_date }}</div>
-        <card-title card="card" story="story" profile="profile"></card-title>
+        <card-title card="card" story="story" profile="state.profile"></card-title>
 
         <div>
             {{ card.summary }}

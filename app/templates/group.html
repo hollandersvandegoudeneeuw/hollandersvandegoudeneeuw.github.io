@@ -1,5 +1,14 @@
-<div>
+<subnav-header title="{{ group.title }}"></subnav-header>
 
-    {{ group }}
-    
+<div class="scroll-area">
+
+    <div>
+
+        <img ng-src="{{ group.image }}" ng-show="group.image" />
+        <div>{{ group.summary }}</div>
+        
+    </div>
+
+    {{ group.members }}
+
 </div>

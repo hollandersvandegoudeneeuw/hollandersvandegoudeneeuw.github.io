@@ -66,13 +66,13 @@ angular.module('app',
 
       .state('story.timeline', {
         url: "/timeline", // root route
-        templateUrl: "app/templates/cardlist.html",
+        templateUrl: "app/templates/timeline.html",
         controller: 'TimelineCtrl'
       })
 
       .state('story.favorites', {
         url: "/favorites",
-        templateUrl: "app/templates/cardlist.html",
+        templateUrl: "app/templates/favorites.html",
         controller: 'FavoritesCtrl'
       })
 

@@ -1,25 +1,32 @@
-<div>
-    <div>
-        <img ng-src="{{ person.image }}" />
-    </div>
-    
-    <h2>{{ person.title }}</h2>
+<subnav-header title="{{ person.title }}"></subnav-header>
 
-    <h3>
-        {{ person.subtitle }}
-    </h3>
-
+<div class="scroll-area">
     <div>
-        {{ person.summary }}
-    </div>
-
-    <div>
-        <div ng-repeat="row in person.keyvalue">
-            <strong>
-                {{ row.key }}
-            </strong>
-            {{ row.value }}
+        <div>
+            <img ng-src="{{ person.image }}" class="person-image" />
         </div>
+        
+        <h2>{{ person.title }}</h2>
+
+        <h3>
+            {{ person.subtitle }}
+        </h3>
+
+        <div>
+            {{ person.summary }}
+        </div>
+
+        <div>
+            <div ng-repeat="row in person.keyvalue">
+                <strong>
+                    {{ row.key }}
+                </strong>
+                {{ row.value }}
+            </div>
+        </div>
+
     </div>
+
+    <ng-include src="'app/templates/ui/cardlist.html'"></ng-include>
     
 </div>

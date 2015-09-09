@@ -1,5 +1,20 @@
 angular.module('app.directives')
 
+  .directive('subnavHeader', function($window) {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/templates/ui/subnav_header.html',
+      scope: {
+        title: '@'
+      },
+      link: function(scope) {
+        scope.back = function() {
+          $window.history.back();
+        };
+      }
+    }
+  })
+
   .directive('cardImage', function($sce, $compile, $state, i18n, Constants) {
     return {
       restrict: 'E',
@@ -20,8 +35,9 @@ angular.module('app.directives')
         if (id == Constants.YOU) {
           rsc = scope.profile;
         }
-        scope.image = rsc.image;
-        
+        if (rsc) {
+          scope.image = rsc.image;
+        }        
       }
     };
   })

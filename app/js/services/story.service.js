@@ -31,6 +31,19 @@ angular.module('app.services')
         return list;
       };
 
+      self.filterPersonCards = function(personId) {
+        var list = [];
+        for (var i in story.chapters) {
+          for (var j in story.chapters[i].cards) {
+            var c = story.chapters[i].cards[j];
+            if (c.author == personId || c.target == personId) {
+              list.push(c);
+            }
+          }
+        }
+        return list;
+      };
+      
       return self;
     };
   })
