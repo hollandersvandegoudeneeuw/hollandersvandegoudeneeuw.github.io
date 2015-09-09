@@ -18,15 +18,24 @@ $fontm: 17px;
 $fontbody: 14px;
 $fonts: 14px;
 
+$nav-bar-height: 60px;
+
 @mixin circleimg {
     border-radius: 50%;
     border: 2px solid #fff;
 }
 
-img.profile-image, img.person-image {
+@mixin shadowbox {
+    padding: $pad;
+    background: $greylight;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+}
+
+img.profile-image {
     @include circleimg;
     width: 90px; height: 90px;
 }
+
 a {
     color: $gold;
 

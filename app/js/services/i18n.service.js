@@ -17,6 +17,9 @@ angular.module('app.services')
         like_text_template_plural: "%s like this",
         like_text_template_single: "%s likes this",
         like_text_template_single_1stperson: "%s like this",
+
+        person_biography: 'Biography',
+        person_details: 'Personal details',
         
         card_title_attend_event: "[author] created an event",
         card_title_attend_event_you: "You are attending an event",
@@ -51,6 +54,9 @@ angular.module('app.services')
         like_text_template_plural: "%s vindt dit leuk",
         like_text_template_single: "%s vinden dit leuk",
         like_text_template_single_1stperson: "%s vindt dit leuk",
+
+        person_biography: 'Biografie',
+        person_details: 'Persoonlijke details',
         
         card_title_attend_event: "[author] heeft een event aangemaakt",
         card_title_attend_event_you: "Je gaat naar een event",

@@ -4,6 +4,9 @@ $card-left-column: $card-profile-image + 2 * $pad * 1.5;
 div.scroll-area {
     height: 100vh;
     overflow: auto;
+}
+
+div.cardlist {
     background: url(/img/timeline_bg_dot.png) repeat-y top left;
     background-position-x: $card-left-column / 2 - 2px;
     background-size: 4px;
@@ -27,12 +30,10 @@ div.timeline-card {
     > div.card {
         flex: 1;
         height: 100%;
-        background: $greylight;
         color: $greydark;
         margin: $pad 0;
-        padding: $pad;
 
-        box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+        @include shadowbox;
 
         div.date {
             color: $greymedium2;
@@ -70,6 +71,6 @@ div.timeline-card {
                 float: right;
                 width: 28px;
             }
-       }
+        }
     }
 }

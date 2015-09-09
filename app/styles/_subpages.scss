@@ -1,0 +1,43 @@
+
+
+div.subnav {
+    height: $nav-bar-height;
+    margin-top: -$nav-bar-height;
+    background: $greydark;
+
+    padding: $pad;
+    font-weight: 600;
+    font-size: $fontl;
+    border-bottom: 4px solid $greydeep;
+
+    img.back {
+        cursor: pointer;
+        width: 20px;
+        margin-right: $pad;
+    }
+}
+
+
+.ui-view-detail > .person {
+
+    img.person-image {
+        @include circleimg;
+        display: block;
+        margin: auto;
+        margin-top: $pad;
+        width: 140px; height: 140px;
+    }
+
+    img.shield {
+        width: 300px;
+        margin: 0 auto;
+        display: block;
+        margin-top: -$padsmall;
+    }
+
+    .box {
+        @include shadowbox;
+        margin-left: $pad;
+    }
+
+}

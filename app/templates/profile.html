@@ -1,12 +1,15 @@
-<h1>{{ state.profile.title }}</h1>
-<p>{{ state.profile.email }}</p>
-<img class="profile-image" ng-src="{{ state.profile.image }}" />
+<div class="profile">
+    
+    <h1>{{ state.profile.title }}</h1>
+    <p>{{ state.profile.email }}</p>
+    <img class="profile-image" ng-src="{{ state.profile.image }}" />
 
-<div ng-show="story.network.length">
-    <h3>Network</h3>
-    <div ng-repeat="id in story.network">
-        {{ story.persons[id].title }}
+    <div ng-show="story.network.length">
+        <h3>Network</h3>
+        <div ng-repeat="id in story.network">
+            {{ story.persons[id].title }}
+        </div>
     </div>
-</div>
 
-<button ng-click="logout()" class="btn btn-default">Log out</button>
+    <button ng-click="logout()" class="btn btn-default">Log out</button>
+</div>

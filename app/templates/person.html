@@ -1,32 +1,44 @@
-<subnav-header title="{{ person.title }}"></subnav-header>
+<div class="person">
 
-<div class="scroll-area">
-    <div>
+    <subnav-header title="{{ person.title }}"></subnav-header>
+
+    <div class="scroll-area">
         <div>
             <img ng-src="{{ person.image }}" class="person-image" />
-        </div>
-        
-        <h2>{{ person.title }}</h2>
+            <img src="/img/bottom_slice_gray.png" class="shield" />
+            
+            <div class="box details">
+                <h2>{{ person.title }}</h2>
 
-        <h3>
-            {{ person.subtitle }}
-        </h3>
+                <div class="subtitle">
+                    {{ person.subtitle }}
+                </div>
 
-        <div>
-            {{ person.summary }}
-        </div>
+                <div ng-show="person.keyvalue && person.keyvalue.length">
+                    <h3>{{ 'person_details'|i18n }}</h3>
+                    
+                    <div class="keyvalue">
+                        <div ng-repeat="row in person.keyvalue">
+                            <strong>
+                                {{ row.key }}
+                            </strong>
+                            {{ row.value }}
+                        </div>
+                    </div>
+                </div>
 
-        <div>
-            <div ng-repeat="row in person.keyvalue">
-                <strong>
-                    {{ row.key }}
-                </strong>
-                {{ row.value }}
+                <div ng-show="person.summary">
+                    <h3>{{ 'person_biography'|i18n }}</h3>
+                    <div>
+                        {{ person.summary }}
+                    </div>
+                </div>
+                
             </div>
+
         </div>
 
+        <ng-include src="'app/templates/ui/cardlist.html'"></ng-include>
+        
     </div>
-
-    <ng-include src="'app/templates/ui/cardlist.html'"></ng-include>
-    
 </div>
