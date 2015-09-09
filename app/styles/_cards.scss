@@ -11,7 +11,7 @@ div.scroll-area {
 
 div.timeline-card {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
 
     > div.left {
         width: $card-left-column;
@@ -26,10 +26,50 @@ div.timeline-card {
     
     > div.card {
         flex: 1;
+        height: 100%;
         background: $greylight;
         color: $greydark;
-        margin: $pad;
-        margin-left: 0;
+        margin: $pad 0;
         padding: $pad;
+
+        box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+
+        div.date {
+            color: $greymedium2;
+        }
+
+        div.card-title {
+            margin: $padsmall 0 0 0;
+            font-size: $fontbody + 1px;
+            
+            a {
+                text-transform: uppercase;
+                color: black;
+                font-weight: 600;
+            }
+        }
+
+        div.summary {
+            margin: $padsmall 0 0 0
+        }
+
+        div.hashtags {
+            margin: $padsmall 0 0 0
+        }
+
+        div.likes {
+            background: $greymedium;
+            color: $greymedium2;
+            margin-top: $padsmall;
+            margin-bottom: -$pad;
+            margin-left: -$pad;
+            margin-right: -$pad;
+            padding: 10px $pad;
+            .like-button {
+                cursor: pointer;
+                float: right;
+                width: 28px;
+            }
+       }
     }
 }

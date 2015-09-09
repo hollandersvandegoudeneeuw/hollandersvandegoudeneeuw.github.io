@@ -4,6 +4,7 @@
             <img ng-src="{{ s.thumbnail }}" class="story-image" />
             <h3>{{ s.title }}</h3>
             <p>{{ s.subtitle }}</p>
+            <div ng-show="s.id == story.id" class="selection"></div>
         </a>
     </li>
 </ul>

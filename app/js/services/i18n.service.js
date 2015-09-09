@@ -12,6 +12,12 @@ angular.module('app.services')
         'choose_header': 'Choose a story to start',
         'choose_text': 'Pick a story from the list on the left.',
         
+        like_text_you: "You",
+        like_text_and: " and ",
+        like_text_template_plural: "%s like this",
+        like_text_template_single: "%s likes this",
+        like_text_template_single_1stperson: "%s like this",
+        
         card_title_attend_event: "[author] created an event",
         card_title_attend_event_you: "You are attending an event",
         card_title_checkin: "[author] checked in",
@@ -39,6 +45,12 @@ angular.module('app.services')
 
         'choose_header': 'Kies een verhaal',
         'choose_text': 'Kies een verhaal uit de lijst aan de linkerkant.',
+
+        like_text_you: "Jij",
+        like_text_and: " en ",
+        like_text_template_plural: "%s vindt dit leuk",
+        like_text_template_single: "%s vinden dit leuk",
+        like_text_template_single_1stperson: "%s vindt dit leuk",
         
         card_title_attend_event: "[author] heeft een event aangemaakt",
         card_title_attend_event_you: "Je gaat naar een event",

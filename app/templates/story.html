@@ -1,11 +1,11 @@
 <div class="story">
     <div class="row">
-        <div class="col-sm-4 hidden-xs profile-side">
+        <div class="col-sm-5 col-md-4 hidden-xs profile-side">
             <div>
                 {{ state.profile.title }}
             </div>
         </div>
-        <div class="col-sm-8 navigation-tabs">
+        <div class="col-sm-7 col-md-8 navigation-tabs">
             <div>
                 <a class="choose visible-xs" ng-class="{active: $state.current.name == 'choose'}" href ui-sref="choose"></a>
                 <a class="timeline" ng-class="{active: $state.current.name == 'story.timeline'}" href ui-sref="story.timeline({storyId: story.id})"></a>
@@ -19,10 +19,10 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-4 hidden-xs stories">
+        <div class="col-sm-5 col-md-4 hidden-xs stories">
             <ng-include src="'app/templates/ui/storylist.html'"></ng-include>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-7 col-md-8">
             <div class="ui-view-detail" ui-view="detail"></div>
         </div>
     </div>
