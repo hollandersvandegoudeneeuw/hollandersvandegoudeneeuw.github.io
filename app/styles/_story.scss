@@ -29,7 +29,7 @@
             background-size: $nav-bar-height - 2*$pad;
             background-position: 50% 45%;
             
-            &.stories {
+            &.choose {
                 background-image: url(/img/ic_home_off.png);
                 &.active { background-image: url(/img/ic_home_on.png); }
             }
@@ -49,25 +49,34 @@
             border-bottom: 4px solid $greydeep;
             &.active { border-color: $gold; }
         }
+
+        &.header {
+            padding: $pad;
+            text-align: center;
+            font-weight: 600;
+            font-size: $fontl;
+            border-bottom: 4px solid $greydeep;
+        }
     }
-    
+
+
+    div.stories {
+        @include story-list;        
+    }
 }
 
-::-webkit-scrollbar
-{
-  width: 20px;  /* for vertical scrollbars */
-  height: 20px; /* for horizontal scrollbars */
-  
-}
 
-::-webkit-scrollbar-track
-{
-    background: $greydark;
-}
-
-::-webkit-scrollbar-thumb
-{
-    background: $greydeep;
-    border-radius: 14px;
-    border: 7px solid $greydark;
+.ui-view-detail > .choose {
+    div.prompt {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $fontll;
+        text-align: center;
+        padding: $pad2;
+    }
+    div.stories {
+        @include story-list;        
+    }
 }

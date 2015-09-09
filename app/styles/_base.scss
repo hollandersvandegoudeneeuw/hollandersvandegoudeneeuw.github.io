@@ -4,7 +4,7 @@ html, body {
 
 @mixin circleimg {
     border-radius: 50%;
-    border: 3px solid #666;
+    border: 2px solid #fff;
 }
 
 img.profile-image, img.person-image {
@@ -15,11 +15,6 @@ img.profile-image, img.person-image {
 img.card-profile-image {
     @include circleimg;
     width: 60px; height: 60px;
-}
-
-#scroll-area {
-    height: 90vh;
-    overflow: auto;
 }
 
 
@@ -34,6 +29,7 @@ $pad2: 35px;
 $pad3: 80px;
 
 $fontxl: 50px;
+$fontll: 30px;
 $fontl: 19px;
 $fontm: 17px;
 $fonts: 14px;
@@ -62,3 +58,74 @@ body {
         position: relative;
     }
 }
+
+
+
+
+div.scroll-area {
+    height: 100vh;
+    overflow: auto;
+}
+
+::-webkit-scrollbar
+{
+    width: 20px;  /* for vertical scrollbars */
+    height: 20px; /* for horizontal scrollbars */
+    
+}
+
+::-webkit-scrollbar-track
+{
+    background: $greydark;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: $greydeep;
+    border-radius: 14px;
+    border: 7px solid $greydark;
+}
+
+
+@mixin story-list {
+    background: $greylight;
+    height: 100vh;
+    
+    ul {
+        li a {
+            display: block;
+            height: 80px;
+            border-bottom: 1px solid $greymedium;
+            padding: $pad;
+            &:hover {
+                text-decoration: none;
+            }
+            
+            img.story-image {
+                @include circleimg;
+                width: 50px; height: 50px;
+                background: $greydeep;
+                float: left;
+                margin-right: $pad;
+            }
+            
+            h3 {
+                color: black;
+                font-size: $fontm;
+                font-weight: 600;
+                margin: $pad/2 0 4px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                padding-right: $pad;
+            }
+            p {
+                color: $greydeep;
+                margin: 0;
+                font-size: $fonts;
+                white-space: nowrap;
+                overflow: hidden;
+                padding-right: $pad;
+            }
+        }
+    }
+}    

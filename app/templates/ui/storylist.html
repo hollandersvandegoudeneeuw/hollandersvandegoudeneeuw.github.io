@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+    <li ng-repeat="s in state.stories" ng-class="{active: s.id == story.id}">
+        <a href ui-sref="story.timeline({storyId: s.id})">
+            <img ng-src="{{ s.thumbnail }}" class="story-image" />
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.subtitle }}</p>
+        </a>
+    </li>
+</ul>

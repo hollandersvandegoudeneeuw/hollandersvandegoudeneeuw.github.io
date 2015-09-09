@@ -8,6 +8,9 @@ angular.module('app.services')
         'login_text': 'This website is part of the app and educational program #goldenAge. Please first visit the exhibition before using this website. Afterwards, log in with the same e-mail address that you used in the app.',
         'login_placeholder': 'E-mail address',
         'login_btn': 'Login',
+
+        'choose_header': 'Choose a story to start',
+        'choose_text': 'Pick a story from the list on the left.',
         
         card_title_attend_event: "[author] created an event",
         card_title_attend_event_you: "You are attending an event",
@@ -34,6 +37,9 @@ angular.module('app.services')
         'login_placeholder': 'E-mailadres',
         'login_btn': 'Login',
 
+        'choose_header': 'Kies een verhaal',
+        'choose_text': 'Kies een verhaal uit de lijst aan de linkerkant.',
+        
         card_title_attend_event: "[author] heeft een event aangemaakt",
         card_title_attend_event_you: "Je gaat naar een event",
         card_title_checkin: "[author] is ingechecked",

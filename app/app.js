@@ -40,6 +40,9 @@ angular.module('app',
         return APIService.get('goldenage/storydata', {id: $stateParams.storyId});
       });
     }]};
+    var resolveLoggedIn = {login: ['AuthService', function(AuthService) {
+      return AuthService.isAuthorized();
+    }]};
 
     $stateProvider
 
@@ -62,6 +65,20 @@ angular.module('app',
         }
       })
 
+      .state('choose', {
+        url: "/choose",
+        resolve: resolveLoggedIn,
+        views: {
+          "master": {
+            templateUrl: "app/templates/story.html",
+          },
+          "detail@choose": {
+            templateUrl: "app/templates/choose.html",
+            controller: 'ChooseCtrl'
+          }
+        }
+      })
+
       .state('story', {
         url: "/:storyId", // root route
         resolve: resolveStory,
@@ -70,16 +87,9 @@ angular.module('app',
             templateUrl: "app/templates/story.html",
             controller: function($scope, story, $state) {
               $scope.story = story;
-              $scope.$state = $state;
             }
           }
         }
-      })
-
-      .state('story.choose', {
-        url: "/choose", // root route
-        templateUrl: "app/templates/choosestories.html",
-        controller: 'ChooseStoriesCtrl'
       })
 
       .state('story.timeline', {
