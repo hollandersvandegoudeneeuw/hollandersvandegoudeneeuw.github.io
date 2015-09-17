@@ -1,7 +1,7 @@
 
 $greylight: #E6E6E6;
 $greymedium: #D4D4D4;
-$greymedium2: #A0A0A0;
+$greymedium2: #909090;
 $greydeep: #4D5257;
 $greydark: #2A2F34;
 $gold: #C09933;
@@ -43,6 +43,12 @@ a {
         text-decoration: none;
         color: darken($gold, 10%);
     }
+}
+
+h3 {
+    margin: 0;
+    font-size: $fontl;
+    font-weight: 600;
 }
 
 body {

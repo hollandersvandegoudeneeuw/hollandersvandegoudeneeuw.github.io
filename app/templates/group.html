@@ -1,14 +1,27 @@
-<subnav-header title="{{ group.title }}"></subnav-header>
+<div class="group">
 
-<div class="scroll-area">
+    <subnav-header title="{{ group.title }}"></subnav-header>
 
-    <div>
+    <div scroll-container>
 
-        <img ng-src="{{ group.image }}" ng-show="group.image" />
-        <div>{{ group.summary }}</div>
-        
+        <div class="box details">
+            <img ng-src="{{ group.image }}" ng-show="group.image" />
+
+            <div>
+                <h3>{{ group.title }}</h3>
+                {{ group.summary }}
+            </div>
+        </div>
+
+        <div class="box network">
+            <h3>{{ 'heading_network'|i18n }}</h3>
+
+            <a ng-repeat="p in group.members" class="member" href ui-sref="story.person({storyId: story.id, personId: p.id})">
+                <img ng-src="{{ p.image }}" />
+                <h4>{{ p.title }}</h4>
+                <p>{{ p.subtitle }}</p>
+            </a>
+        </div>
+
     </div>
-
-    {{ group.members }}
-
 </div>

@@ -1,15 +1,39 @@
 <div class="profile">
-    
-    <h1>{{ state.profile.title }}</h1>
-    <p>{{ state.profile.email }}</p>
-    <img class="profile-image" ng-src="{{ state.profile.image }}" />
 
-    <div ng-show="story.network.length">
-        <h3>Network</h3>
-        <div ng-repeat="id in story.network">
-            {{ story.persons[id].title }}
+    <div scroll-container>
+        <div>
+            
+            <div class="box details">
+
+                <div class="head">
+                    <img ng-src="{{ state.profile.image }}" class="head-image" />
+
+                    <h2>{{ state.profile.title }}</h2>
+
+                    <div class="subtitle">
+                        {{ state.profile.email }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box network" ng-show="story.network.length">
+                <h3>{{ 'heading_network'|i18n }}</h3>
+                
+                <a ng-repeat="p in network" class="member" href ui-sref="story.person({storyId: story.id, personId: p.id})">
+                    <img ng-src="{{ p.image }}" />
+                    <h4>{{ p.title }}</h4>
+                    <p>{{ p.subtitle }}</p>
+                </a>
+
+            </div>
+
+            <div class="box">
+                <a href ui-sref="page.help" class="block-link">Help</button>
+                <a href ui-sref="page.credits" class="block-link">Credits</button>
+                <a href ng-click="logout()" class="block-link">Log out</button>
+            </div>
+            
         </div>
     </div>
-
-    <button ng-click="logout()" class="btn btn-default">Log out</button>
+    
 </div>

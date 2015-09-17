@@ -20,6 +20,8 @@ angular.module('app.services')
 
         person_biography: 'Biography',
         person_details: 'Personal details',
+
+        heading_network: 'Network',
         
         card_title_attend_event: "[author] created an event",
         card_title_attend_event_you: "You are attending an event",
@@ -57,7 +59,9 @@ angular.module('app.services')
 
         person_biography: 'Biografie',
         person_details: 'Persoonlijke details',
-        
+
+        heading_network: 'Netwerk',
+
         card_title_attend_event: "[author] heeft een event aangemaakt",
         card_title_attend_event_you: "Je gaat naar een event",
         card_title_checkin: "[author] is ingechecked",

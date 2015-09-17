@@ -18,26 +18,169 @@ div.subnav {
 }
 
 
+// common
+
+div.box {
+    @include shadowbox;
+    padding: 0;
+    margin-top: $pad;
+    margin-left: $pad;
+    margin-bottom: $pad;
+    color: $greydark;
+
+    div.head {
+        @include clearfix;
+        padding: $pad;
+
+        img.head-image {
+            @include circleimg;
+            margin-right: $pad2;
+            width: 140px; height: 140px;
+            float: left;
+            border-width: 4px;
+        }
+        
+        h2 {
+            margin: $pad 0 0 0;
+            font-size: $fontl + 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        div.subtitle {
+            margin: $pad 0 0 0;
+            font-size: $fontm;
+            font-style: italic;
+        }
+    }
+
+    a.block-link {
+        margin: 0; padding: $pad;
+        font-size: $fontl;
+        font-weight: 600;
+        color: $greydark;
+        display: block;
+        border-top: 1px solid $greymedium;
+        &:first-child {
+            border-top: 0;
+        }
+    }
+
+    &.network {
+        @include shadowbox;
+        color: $greydark;
+        padding: 0;
+        margin-top: $pad;
+        margin-left: $pad;
+        margin-bottom: $pad;
+
+        h3 {
+            padding: $pad;
+        }
+
+        a.member {
+            @include clearfix;
+            display: block;
+            padding: $pad;
+            border-top: 1px solid $greymedium;
+            color: $greydark;
+            
+            img {
+                float: left;
+                @include circleimg;
+                width: 40px; height: 40px;
+                margin-right: $pad;
+            }
+
+            h4 {
+                margin: 4px 0 2px 0;
+                font-size: $fontbody;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            
+            p {
+                margin: 0; font-style: italic;
+            }
+        }
+    }    
+    
+}
+
+// specific
+
 .ui-view-detail > .person {
 
-    img.person-image {
-        @include circleimg;
-        display: block;
-        margin: auto;
-        margin-top: $pad;
-        width: 140px; height: 140px;
-    }
-
-    img.shield {
-        width: 300px;
-        margin: 0 auto;
-        display: block;
-        margin-top: -$padsmall;
-    }
-
     .box {
-        @include shadowbox;
-        margin-left: $pad;
+
+        .item {
+            padding: $pad * 1.5;
+            border-top: 1px solid $greymedium;
+            
+            font-size: $fontm;
+            
+            p {
+                margin: $pad 0 0 0;
+            }                
+            
+            .keyvalue {
+                .key {
+                    color: $greymedium2;
+                }
+            }
+            
+        }
     }
 
+    .network {
+        div.row h3 {
+            margin-top: $pad;
+            a {
+                color: $greydark;
+            }
+        }
+        a.member {
+            $member-size: 54px;
+            margin-right: $padsmall;
+            display: inline-block;
+            width: $member-size; height: $member-size;
+            position: relative;
+            img {
+                position: absolute;
+                width: $member-size; height: $member-size;
+                @include circleimg;
+                margin-right: $padsmall;
+                background: $greydeep;
+            }
+            span {
+                position: absolute;
+                left: 11px;
+                top: 7px;
+                font-weight: 600;
+                color: white;
+                font-size: 26px;
+            }
+        }
+    }
+    
+}
+
+.ui-view-detail > .group {
+
+    .box.details {
+
+        > img {
+            width: 100%;
+            height: auto;
+        }
+        
+        > div {
+            h3 { margin-bottom: $pad; }
+            padding: $pad;
+        }
+    }
+
+}
+
+.ui-view-detail > .profile {
 }

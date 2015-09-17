@@ -65,6 +65,33 @@ angular.module('app',
         }
       })
 
+      .state('page', {
+        url: "/page",
+        views: {
+          "master": {
+            templateUrl: "app/templates/page.html",
+          }
+        }
+      })
+
+      .state('page.help', {
+        url: "/help",
+        views: {
+          "detail": {
+            templateUrl: "app/templates/help.html",
+          }
+        }
+      })
+
+      .state('page.credits', {
+        url: "/credits",
+        views: {
+          "detail": {
+            templateUrl: "app/templates/credits.html",
+          }
+        }
+      })
+    
       .state('choose', {
         url: "/choose",
         resolve: resolveLoggedIn,

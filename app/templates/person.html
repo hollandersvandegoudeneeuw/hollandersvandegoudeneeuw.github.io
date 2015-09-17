@@ -2,42 +2,68 @@
 
     <subnav-header title="{{ person.title }}"></subnav-header>
 
-    <div class="scroll-area">
+    <div scroll-container>
         <div>
-            <img ng-src="{{ person.image }}" class="person-image" />
-            <img src="/img/bottom_slice_gray.png" class="shield" />
             
             <div class="box details">
-                <h2>{{ person.title }}</h2>
 
-                <div class="subtitle">
-                    {{ person.subtitle }}
+                <div class="head">
+                    <img ng-src="{{ person.image }}" class="head-image" />
+
+                    <h2>{{ person.title }}</h2>
+
+                    <div class="subtitle">
+                        {{ person.subtitle }}
+                    </div>
                 </div>
-
-                <div ng-show="person.keyvalue && person.keyvalue.length">
+                
+                <div class="item" ng-show="person.keyvalue && person.keyvalue.length">
                     <h3>{{ 'person_details'|i18n }}</h3>
                     
                     <div class="keyvalue">
-                        <div ng-repeat="row in person.keyvalue">
-                            <strong>
+                        <div class="row" ng-repeat="row in person.keyvalue">
+                            <div class="col-xs-3 key">
                                 {{ row.key }}
-                            </strong>
-                            {{ row.value }}
+                            </div>
+                            <div class="col-xs-9 value">
+                                {{ row.value }}
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div ng-show="person.summary">
+                <div class="item" ng-show="person.summary">
                     <h3>{{ 'person_biography'|i18n }}</h3>
-                    <div>
+                    <p>
                         {{ person.summary }}
-                    </div>
+                    </p>
                 </div>
                 
             </div>
 
+            <div class="box network" ng-show="groups.length > 0">
+                <div class="item">
+                    <h3>Groups</h3>
+                </div>
+
+                <div class="row item" ng-repeat="group in groups">
+                    <div class="col-xs-4">
+                        <h3><a href ui-sref="story.group({storyId: story.id, groupId: group.id})">{{ group.title }}</a></h3>
+                    </div>
+                    <div class="col-xs-8">
+                        <a class="member" href ng-repeat="g in group.members" ng-class="{'hidden-sm': g.hiddensm}" ui-sref="story.person({storyId: story.id, personId: g.id})">
+                            <img ng-src="{{ g.image }}" ng-show="!g.rest"/>
+                            <img ng-src="{{ g.image }}xx" ng-show="g.rest" />
+                            <span class="count" ng-show="g.rest">+{{ g.rest }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
+
+        
         <ng-include src="'app/templates/ui/cardlist.html'"></ng-include>
         
     </div>

@@ -1,5 +1,20 @@
 angular.module('app.directives')
 
+  .directive('scrollContainer', function($window, $timeout) {
+    return {
+      restrict: 'A',
+      link: function(s, el) {
+        el.addClass("scroll-area");
+        el.css('opacity', 0);
+        $timeout(function() {
+          el.toggleClass("scrollbar",  (el[0].scrollHeight > el[0].clientHeight));
+          //check();
+          el.css('opacity', 1);
+        });
+      }
+    };
+  })
+
   .directive('subnavHeader', function($window) {
     return {
       restrict: 'E',
@@ -12,7 +27,7 @@ angular.module('app.directives')
           $window.history.back();
         };
       }
-    }
+    };
   })
 
   .directive('cardImage', function($sce, $compile, $state, i18n, Constants) {
@@ -60,7 +75,7 @@ angular.module('app.directives')
           }
           break;
         }
-          
+        
         var template = i18n('card_title_' + cat);
 
         function link(tpl, id) {
