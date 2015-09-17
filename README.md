@@ -1,2 +1,0 @@
-# Golden Age web frontend
-
